@@ -5,17 +5,17 @@ export default function TextForm(props) {
 
   const handleUpClick = () => {
     setText(text.toUpperCase());
-    props.showAlert('Converted to Uppercase', 'success');
+    props.showToastMessage('Converted to Uppercase');
   }
 
   const handleLowClick = () => {
     setText(text.toLowerCase());
-    props.showAlert('Converted to Lowercase', 'success');
+    props.showToastMessage('Converted to Lowercase');
   }
 
   const handleClearClick = () => {
     setText('');
-    props.showAlert('Cleared', 'danger');
+    props.showToastMessage('Cleared');
   }
 
   const handleCapClick = () => {
@@ -26,20 +26,20 @@ export default function TextForm(props) {
     }
     const newStr = separateWord.join(' ');
     setText(newStr);
-    props.showAlert('Captlized', 'success');
+    props.showToastMessage('Captlized');
   }
 
   const handleCopy = () => {
     let text = document.getElementById('textArea');
     text.select();
     navigator.clipboard.writeText(text.value);
-    props.showAlert('Coppied to clipboard', 'success');
+    props.showToastMessage('Coppied to clipboard');
   }
 
   const handleRemoveSpace = () => {
     let trimedText = text.split(/[ ]+/);
     setText(trimedText.join(' '));
-    props.showAlert('Spaces removed', 'success');
+    props.showToastMessage('Spaces removed');
   }
 
   const handleOnChange = (event) => {
