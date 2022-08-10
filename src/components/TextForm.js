@@ -19,7 +19,7 @@ export default function TextForm(props) {
   }
 
   const handleCapClick = () => {
-    const separateWord = text.toLowerCase().split(' ');
+    const separateWord = text.toLowerCase().split(/\s+/);
     for (var i = 0; i < separateWord.length; i++) {
       separateWord[i] = separateWord[i].charAt(0).toUpperCase() +
         separateWord[i].substring(1);
@@ -30,9 +30,7 @@ export default function TextForm(props) {
   }
 
   const handleCopy = () => {
-    let text = document.getElementById('textArea');
-    text.select();
-    navigator.clipboard.writeText(text.value);
+    navigator.clipboard.writeText(text);
     props.showToastMessage('Coppied to clipboard');
   }
 
@@ -47,7 +45,7 @@ export default function TextForm(props) {
   }
 
   function countWords(str) {
-    const arr = str.split(' ');
+    const arr = str.split(/\s+/);
     return arr.filter(word => word !== '').length;
   }
 

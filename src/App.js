@@ -41,6 +41,7 @@ function App() {
         <Toast message={toastMessage} />
         <Routes>
           <Route exact path="/" element={<TextForm showToastMessage={showToastMessage} heading="Enter the text to analyze !" mode={mode} />} />
+          <Route exact path="/index.html" element={<TextForm showToastMessage={showToastMessage} heading="Enter the text to analyze !" mode={mode} />} />
           <Route exact path="/about" element={<About title="About TextUtils" mode={mode} />} />
         </Routes>
       </Router>
