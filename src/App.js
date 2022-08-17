@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import './App.css';
+// import './App.css';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Toast from './components/Toast';
 import {
   BrowserRouter as Router,
-  Switch,
   Routes,
   Route
 } from "react-router-dom";
